@@ -6,7 +6,7 @@ on:
 #  pull_request:
 #    branches: [ main ]
   schedule:
-    - cron: 17 4 * * *
+    - cron: 40 4 * * *
   watch:
     types: started
 
@@ -26,8 +26,8 @@ jobs:
           pip install requests
           pmode='${{ secrets.PMODE }}'
           pkey='${{ secrets.PKEY }}'
-          user='${{ secrets.USER }}'
-          pwd='${{ secrets.PWD }}'
+          user='${{ secrets.USER8019 }}'
+          pwd='${{ secrets.PWD8019 }}'
           step='${{ secrets.STEP }}'
 
           python3 main.py ${pmode} ${pkey} ${user} ${pwd} ${step}
