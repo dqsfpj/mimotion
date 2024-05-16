@@ -1,12 +1,12 @@
 name: walk
 
 on:
-  # push:  # 代码推送到仓库时触发
-    # branches: [ main ] 
-  # pull_request: # Pull Request 创建或更新时触发
-    # branches: [ main ]
+#  push:
+#    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
   schedule:
-    - cron: 38 3 * * *
+    - cron: 15 4 * * *
   watch:
     types: started
 
@@ -22,12 +22,12 @@ jobs:
         with:
           python-version: 3.7
       - name: 开始
-        env: 
+        run: |
           pip install requests
           pmode='${{ secrets.PMODE }}'
           pkey='${{ secrets.PKEY }}'
-          user='${{ secrets.USER8019 }}'
-          pwd='${{ secrets.PWD8019 }}'
+          user='${{ secrets.USER }}'
+          pwd='${{ secrets.PWD }}'
           step='${{ secrets.STEP }}'
-        run:
+
           python3 main.py ${pmode} ${pkey} ${user} ${pwd} ${step}
